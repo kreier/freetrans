@@ -1,5 +1,5 @@
 [project]
-name = "freetrans"
+name = "freetrans-py"
 version = "0.1.0"
 description = "Free, open translation across multiple providers with curl-cffi anti-rate-limiting"
 readme = "README.md"

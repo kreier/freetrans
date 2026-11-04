@@ -1,6 +1,6 @@
 # freetrans
 
-[![PyPI version](https://img.shields.io/pypi/v/freetrans.svg)](https://pypi.org/project/freetrans/)
+[![PyPI version](https://img.shields.io/pypi/v/freetrans-py.svg)](https://pypi.org/project/freetrans-py/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 [![GitHub Repo](https://img.shields.io/badge/github-kreier%2Ffreetrans-blue.svg)](https://github.com/kreier/freetrans)
@@ -29,8 +29,13 @@ Translating text programmatically in Python shouldn't require paid API keys, mon
 ## Installation
 
 ```bash
-pip install freetrans
+pip install freetrans-py
 ```
+
+> **Note on Naming:** The PyPI package distribution is named **`freetrans-py`**, while the Python module namespace is **`freetrans`**:
+> ```python
+> from freetrans import SyncTranslator, Translator
+> ```
 
 ---
 
@@ -209,10 +214,10 @@ freetrans "Hello friend" -d zh-cn -p google
 
 ### Migrating from `googletrans` or `googletrans-curl`
 
-1. Change your package dependency from `googletrans` or `googletrans-curl` to `freetrans`:
+1. Change your package dependency from `googletrans` or `googletrans-curl` to `freetrans-py`:
    ```bash
    pip uninstall googletrans googletrans-curl
-   pip install freetrans
+   pip install freetrans-py
    ```
 
 2. Update your Python imports:
