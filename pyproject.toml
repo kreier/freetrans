@@ -1,0 +1,77 @@
+[project]
+name = "freetrans"
+version = "0.1.0"
+description = "Free, open translation across multiple providers with curl-cffi anti-rate-limiting"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "Apache-2.0"
+dependencies = [
+    "curl_cffi>=0.7.0",
+    "httpx[http2]>=0.27.2",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS :: MacOS X",
+    "Topic :: Software Development :: Internationalization",
+    "Topic :: Education",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "ruff>=0.7",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["freetrans"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/freetrans",
+    "/LICENSE",
+    "/README.md",
+    "/pyproject.toml",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "ruff>=0.7",
+]
+
+[project.scripts]
+freetrans = "freetrans.cli:main"
+translate = "freetrans.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/kreier/freetrans"
+Repository = "https://github.com/kreier/freetrans"
+Issues = "https://github.com/kreier/freetrans/issues"
+
+[[project.authors]]
+name = "Matthias Kreier"
+
+[[project.maintainers]]
+name = "Matthias Kreier"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
